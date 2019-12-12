@@ -1,0 +1,253 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  /* background: #ddd;\ */
+  margin: 0;
+}
+
+main {
+  background: url("/images/bg-aurora_1920.jpg") center center no-repeat fixed;
+  background-size: cover;
+  height: 100vh;
+  transition: 0.6s 0.1s;
+}
+
+.card-yellow:hover ~ main {
+  background: url("/images/bg-thunderstorm_1920.jpg") center center no-repeat
+    fixed;
+  background-size: cover;
+}
+
+.card-green:hover ~ main {
+  background: url("/images/bg-morning_1920.jpg") center center no-repeat fixed;
+  background-size: cover;
+}
+
+.card-blue:hover ~ main {
+  background: url("/images/bg-sunset-_1920.jpg") center center no-repeat fixed;
+  background-size: cover;
+}
+
+.card-yellow {
+  border-top: 5px solid yellow;
+  transform: translate(-155%, -50%);
+}
+
+.card-green {
+  border-top: 5px solid rgb(29, 255, 29);
+  transform: translate(-50%, -50%);
+}
+
+.card-blue {
+  border-top: 5px solid blue;
+  transform: translate(55%, -50%);
+}
+
+section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  height: 600px;
+  width: 400px;
+  transition: 0.6s 0.2s;
+  opacity: 0.6;
+}
+
+section:hover {
+  opacity: 0.8;
+}
+
+p.title {
+  font-size: 2rem;
+}
+
+p {
+  text-align: center;
+  padding: 0 40px;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 40px 0;
+  width: 100%;
+}
+
+td {
+  border: 1px solid rgb(241, 241, 241);
+  flex: 1;
+  /* display: flex; */
+}
+
+.flex-table {
+  display: flex;
+  flex-wrap: wrap;
+  /* padding: 40px; */
+  /* border: 1px solid red; */
+}
+
+span {
+  font-size: 3rem;
+}
+
+.cell {
+  border: 1px solid blue;
+  padding: 40px;
+  /* flex: 1; */
+}
+
+.price-padding {
+  margin: 20px 0;
+}
+
+.logo-flip img {
+  transition: 1s;
+}
+
+.logo-flip:hover img {
+  transform: rotate(360deg);
+}
+
+img.icon-left {
+  mix-blend-mode: difference;
+}
+
+img.icon-middle {
+  mix-blend-mode: hard-light;
+}
+
+img.icon-right {
+  mix-blend-mode: luminosity;
+}
+
+/* -------------------------------------------
+* Slide effect with radio buttons
+* -------------------------------------------- */
+
+input[name="slide-button"] {
+  position: absolute;
+  visibility: hidden;
+}
+
+.buttons {
+  display: flex;
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slide-button {
+  position: relative;
+  background: linear-gradient(160deg, pink, rgb(71, 0, 185));
+  /* border: 4px solid rgba(72, 209, 205, 0.2); */
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  opacity: 0.4;
+  margin: 0 20px;
+  width: 140px;
+  height: 40px;
+  transition: 0.2s;
+}
+
+.slide-button:hover {
+  opacity: 0.8;
+}
+
+#slide-button-left:checked ~ .card-yellow {
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+  height: 650px;
+  border-top: 12px solid yellow;
+}
+
+#slide-button-left:checked ~ .card-green {
+  transform: translate(-155%, -50%);
+}
+
+#slide-button-middle:checked ~ .card-green {
+  opacity: 0.9;
+  height: 650px;
+  border-top: 12px solid green;
+}
+
+#slide-button-right:checked ~ .card-blue {
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+  height: 650px;
+  border-top: 12px solid blue;
+}
+
+#slide-button-right:checked ~ .card-green {
+  transform: translate(55%, -50%);
+}
+
+.slide-button {
+  color: white;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* -------------------------------------------
+* Media Query 
+* -------------------------------------------- */
+
+@media (max-width: 1300px) {
+  main {
+    height: 2000px;
+  }
+
+  .card-yellow {
+    transform: translate(-50%, -70%);
+  }
+  .card-green {
+    transform: translate(-50%, 35%);
+  }
+  .card-blue {
+    transform: translate(-50%, 140%);
+    margin-bottom: 80px;
+  }
+
+  section {
+    width: 600px;
+    /* height: 2000px; */
+  }
+
+  .slide-button {
+    display: none;
+  }
+
+  /* .card-green {
+    opacity: 0.6;
+    height: 600px;
+    border-top: 6px solid green;
+  } */
+
+  #slide-button-middle:checked ~ .card-green {
+    opacity: 0.6;
+    height: 600px;
+    border-top: 6px solid green;
+}
+
+@media (max-width: 800px) {
+  section {
+    width: 76%;
+  }
+}
+
+
+@media (max-width: 550px) {
+  section {
+    width: 96%;
+  }
+}
