@@ -11,25 +11,25 @@ body {
 }
 
 main {
-  background: url("/images/bg-aurora_1920.jpg") center center no-repeat fixed;
+  background: url("./images/bg-aurora_1920.jpg") center center no-repeat fixed;
   background-size: cover;
   height: 100vh;
   transition: 0.6s 0.1s;
 }
 
 .card-yellow:hover ~ main {
-  background: url("/images/bg-thunderstorm_1920.jpg") center center no-repeat
+  background: url("./images/bg-thunderstorm_1920.jpg") center center no-repeat
     fixed;
   background-size: cover;
 }
 
 .card-green:hover ~ main {
-  background: url("/images/bg-morning_1920.jpg") center center no-repeat fixed;
+  background: url("./images/bg-morning_1920.jpg") center center no-repeat fixed;
   background-size: cover;
 }
 
 .card-blue:hover ~ main {
-  background: url("/images/bg-sunset-_1920.jpg") center center no-repeat fixed;
+  background: url("./images/bg-sunset-_1920.jpg") center center no-repeat fixed;
   background-size: cover;
 }
 
